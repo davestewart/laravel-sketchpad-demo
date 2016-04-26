@@ -1,40 +1,45 @@
-var elixir = require('laravel-elixir'),
-    gulp = require('gulp');
+// ------------------------------------------------------------------------------------------------
+// libs
+
+	// gulp
+	var gulp 	= require('gulp'),
+
+		// 3rd party
+		elixir	= require('laravel-elixir'),
+		server 	= require('gulp-server-livereload'),
+		reload	= require('laravel-elixir-livereload');
 
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for our application, as well as publishing vendor resources.
- |
- */
+// ------------------------------------------------------------------------------------------------
+// tasks
 
-elixir(function(mix) {
-    mix.sass('app.scss');
-});
+	// variables
+	var src = '../vendor/davestewart/doodle/';
 
+	// live reload: https://www.npmjs.com/package/laravel-elixir-livereload
+	/*
+	elixir(function(mix) {
+		mix.livereload([src + 'resources/views', src + 'public']);
+	});
+	*/
 
-
-//require('laravel-elixir-livereload');
-
-//elixir(function(mix) {
-//    mix.livereload('app/**/*.php');
-//});var server = require('gulp-server-livereload');
+	// copy doodle resources to public
+	elixir(function(mix) {
+		mix.copy(src + 'public', '../public/vendor/doodle/');
+	});
 
 
+// ------------------------------------------------------------------------------------------------
+// doodle watching
 
+    function doodle()
+    {
+        gulp.src('app/Http/Controllers/Doodles/**/*.php')
+            .pipe(server({
+                livereload: true,
+                directoryListing: true,
+                open: true
+            }));
+    }
 
-var server = require('gulp-server-livereload');
-
-gulp.task('doodle', function() {
-    gulp.src('app/Http/Controllers/Doodles/**/*.php')
-        .pipe(server({
-            livereload: true,
-            directoryListing: true,
-            open: true
-        }));
-});
+    gulp.task('doodle', doodle);
