@@ -11,9 +11,8 @@
 |
 */
 
-$app = new Illuminate\Foundation\Application(
-    realpath(__DIR__.'/../')
-);
+$app = new pathconfig\apps\Laravel51();
+	//new Illuminate\Foundation\Application(realpath(__DIR__.'/../'));
 
 /*
 |--------------------------------------------------------------------------

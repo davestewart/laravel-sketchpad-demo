@@ -1,6 +1,6 @@
 /.idea
 /vendor
-/node_modules
+/support/node_modules
 /public/storage
 /public/vendor
 /public/css
