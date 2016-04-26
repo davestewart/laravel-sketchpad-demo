@@ -3,43 +3,84 @@
 
 	// gulp
 	var gulp 	= require('gulp'),
-
-		// 3rd party
-		elixir	= require('laravel-elixir'),
-		server 	= require('gulp-server-livereload'),
-		reload	= require('laravel-elixir-livereload');
+		server 	= require('gulp-server-livereload');
 
 
 // ------------------------------------------------------------------------------------------------
-// tasks
+// variables
 
-	// variables
-	var src = '../vendor/davestewart/doodle/';
+	var lib = '../vendor/davestewart/doodle/';
 
-	// live reload: https://www.npmjs.com/package/laravel-elixir-livereload
-	/*
-	elixir(function(mix) {
-		mix.livereload([src + 'resources/views', src + 'public']);
+	var serverInstance = server({
+		livereload: true,
+		directoryListing: false,
+		open: false,
+		port:8001
 	});
-	*/
 
-	// copy doodle resources to public
-	elixir(function(mix) {
-		mix.copy(src + 'public', '../public/vendor/doodle/');
-	});
+
+// ------------------------------------------------------------------------------------------------
+// functions
+
+	// ------------------------------------------------------------------------------------------------
+	// package public folder
+
+		function updatePackage()
+		{
+			var source = lib + 'public/**/*';
+			var target = '../public/vendor/doodle/';
+
+			return gulp
+				.src(source)
+				.pipe(gulp.dest(target));
+		}
+
+		function watchPackage()
+		{
+			var source = lib + 'public/**/*';
+
+			gulp.watch(source, ['update-package']);
+		}
+
+
+	// ------------------------------------------------------------------------------------------------
+	// package views
+
+		function livereloadPackage()
+		{
+			var source = lib + 'resources/views/**/*';
+
+			gulp.src(source)
+				.pipe(serverInstance);
+		}
+
+
+	// ------------------------------------------------------------------------------------------------
+	// project controllers
+
+		function livereloadProject()
+		{
+			var source =
+			[
+				lib + 'resources/views/**/*',
+				'../app/Http/Controllers/Doodles/**/*.php'
+			];
+
+			gulp.src(source)
+				.pipe(serverInstance);
+		}
 
 
 // ------------------------------------------------------------------------------------------------
 // doodle watching
 
-    function doodle()
-    {
-        gulp.src('app/Http/Controllers/Doodles/**/*.php')
-            .pipe(server({
-                livereload: true,
-                directoryListing: true,
-                open: true
-            }));
-    }
+    gulp.task('update-package', updatePackage);
+    gulp.task('watch-package', watchPackage);
+    gulp.task('lr-package', livereloadPackage);
+    gulp.task('lr-project', livereloadProject);
 
-    gulp.task('doodle', doodle);
+	gulp.task('default', function(){
+		updatePackage();
+		watchPackage();
+		livereloadProject();
+	});
