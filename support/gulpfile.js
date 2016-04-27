@@ -9,7 +9,7 @@
 // ------------------------------------------------------------------------------------------------
 // variables
 
-	var lib = '../vendor/davestewart/doodle/';
+	var lib = '../vendor/davestewart/sketchpad/';
 
 	var serverInstance = server({
 		livereload: true,
@@ -28,7 +28,7 @@
 		function updatePackage()
 		{
 			var source = lib + 'public/**/*';
-			var target = '../public/vendor/doodle/';
+			var target = '../public/vendor/sketchpad/';
 
 			return gulp
 				.src(source)
@@ -63,7 +63,7 @@
 			var source =
 			[
 				lib + 'resources/views/**/*',
-				'../app/Http/Controllers/Doodles/**/*.php'
+				'../app/Http/Controllers/Sketchpad/**/*.php'
 			];
 
 			gulp.src(source)
@@ -72,7 +72,7 @@
 
 
 // ------------------------------------------------------------------------------------------------
-// doodle watching
+// sketchpad watching
 
     gulp.task('update-package', updatePackage);
     gulp.task('watch-package', watchPackage);

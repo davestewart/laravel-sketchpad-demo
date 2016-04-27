@@ -160,7 +160,7 @@ return [
          * 3rd-party Service Providers...
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        davestewart\doodle\Providers\DoodleServiceProvider::class,
+        davestewart\sketchpad\providers\SketchpadServiceProvider::class,
 
     ],
 

@@ -29,7 +29,7 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "davestewart\\doodle\\": "vendor/davestewart/doodle/src/"
+            "davestewart\\sketchpad\\": "vendor/davestewart/sketchpad/src/"
         },
         "files":[
             "app/utils.php"
