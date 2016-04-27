@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers\Doodles\other\cooie;
+<?php namespace App\Http\Controllers\Sketchpad\other\cooie;
 
 use App\Http\Controllers\Controller;
 

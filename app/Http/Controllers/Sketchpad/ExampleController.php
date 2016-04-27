@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers\Doodles;
+<?php namespace App\Http\Controllers\Sketchpad;
 
 use App\Http\Controllers\Controller;
 
@@ -12,7 +12,7 @@ class ExampleController extends Controller
 {
 
 	/**
-	 * Say hello
+	 * This is a really long comment that I hope will get clipped
 	 *
 	 * This is some more text
 	 *
@@ -27,9 +27,6 @@ class ExampleController extends Controller
 		echo "Hello $thing";
 
 	}
-
-	
-
 
 	/**
 	 * Say goodbye
