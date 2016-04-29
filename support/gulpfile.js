@@ -40,9 +40,9 @@
 	// ------------------------------------------------------------------------------------------------
 	// package public folder
 
-		function updateVendor()
+		function updateVendor(source)
 		{
-			var source = assets.core;
+			source = source || assets.core;
 			var target = project + 'public/vendor/sketchpad/';
 
 			//gutil.log(serverInstance);
@@ -54,9 +54,8 @@
 
 		function watchVendor()
 		{
-			var source = assets.core;
-
-			gulp.watch(source, ['update-vendor']);
+			gulp.watch(assets.js, ['update-vendor-js']);
+			gulp.watch(assets.css, ['update-vendor-css']);
 		}
 
 
@@ -92,8 +91,11 @@
 // ------------------------------------------------------------------------------------------------
 // sketchpad watching
 
-    gulp.task('update-vendor', updateVendor);
+    gulp.task('update-vendor-js', function(){ updateVendor(assets.js) });
+    gulp.task('update-vendor-css', function(){ updateVendor(assets.css) });
+
     gulp.task('watch-vendor', watchVendor);
+
     gulp.task('lr-vendor', livereloadVendor);
     gulp.task('lr-project', livereloadProject);
 
