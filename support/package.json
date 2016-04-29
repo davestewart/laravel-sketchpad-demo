@@ -1,20 +1,21 @@
 {
-	"name": "laravel-sketchpad-demo",
-	"version": "1.0.0",
-	"description": "Demo project to develop and test Laravel Sketchpad",
-	"main": "gulpfile.js",
-	"directories": {
-		"test": "tests"
-	},
-	"dependencies": {
-	},
-	"devDependencies": {
-		"gulp": "^3.9.1",
-		"gulp-server-livereload": "^1.7.4"
-	},
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "Dave Stewart",
-	"license": "MIT"
+  "name": "laravel-sketchpad-demo",
+  "version": "1.0.0",
+  "description": "Demo project to develop and test Laravel Sketchpad",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-server-livereload": "^1.7.4",
+    "gulp-shell": "^0.5.2",
+    "gulp-util": "^3.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dave Stewart",
+  "license": "MIT"
 }

@@ -3,16 +3,31 @@
 
 	// gulp
 	var gulp 	= require('gulp'),
+		gutil 	= require('gulp-util'),
 		server 	= require('gulp-server-livereload');
 
 
 // ------------------------------------------------------------------------------------------------
 // variables
 
-	var lib = '../vendor/davestewart/sketchpad/';
+	var vendor	= '../vendor/davestewart/sketchpad/';
+	var project = '../';
+	var assets  =
+	{
+		all	  : vendor  + 'publish/assets/**/*',
+		core  : vendor  + 'publish/assets/*',
+		css	  : vendor  + 'publish/assets/*.css',
+		js	  : vendor  + 'publish/assets/*.js'
+	};
 
 	var serverInstance = server({
-		livereload: true,
+		livereload: {
+			enable: true,
+			filter: function (filename, cb) {
+				var state = ! /\.(sa|le)ss$|node_modules/.test(filename);
+				cb(state);
+			}
+		},
 		directoryListing: false,
 		open: false,
 		port:8001
@@ -25,30 +40,32 @@
 	// ------------------------------------------------------------------------------------------------
 	// package public folder
 
-		function updatePackage()
+		function updateVendor()
 		{
-			var source = lib + 'public/**/*';
-			var target = '../public/vendor/sketchpad/';
+			var source = assets.core;
+			var target = project + 'public/vendor/sketchpad/';
+
+			//gutil.log(serverInstance);
 
 			return gulp
 				.src(source)
 				.pipe(gulp.dest(target));
 		}
 
-		function watchPackage()
+		function watchVendor()
 		{
-			var source = lib + 'public/**/*';
+			var source = assets.core;
 
-			gulp.watch(source, ['update-package']);
+			gulp.watch(source, ['update-vendor']);
 		}
 
 
 	// ------------------------------------------------------------------------------------------------
 	// package views
 
-		function livereloadPackage()
+		function livereloadVendor()
 		{
-			var source = lib + 'resources/views/**/*';
+			var source = vendor + 'resources/views/**/*';
 
 			gulp.src(source)
 				.pipe(serverInstance);
@@ -62,8 +79,9 @@
 		{
 			var source =
 			[
-				lib + 'resources/views/**/*',
-				'../app/Http/Controllers/Sketchpad/**/*.php'
+				vendor  + 'resources/views/**/*',
+				project + 'public/vendor/sketchpad/**/*.+(css|js)',
+				project + 'app/Http/Controllers/Sketchpad/**/*.php'
 			];
 
 			gulp.src(source)
@@ -74,13 +92,13 @@
 // ------------------------------------------------------------------------------------------------
 // sketchpad watching
 
-    gulp.task('update-package', updatePackage);
-    gulp.task('watch-package', watchPackage);
-    gulp.task('lr-package', livereloadPackage);
+    gulp.task('update-vendor', updateVendor);
+    gulp.task('watch-vendor', watchVendor);
+    gulp.task('lr-vendor', livereloadVendor);
     gulp.task('lr-project', livereloadProject);
 
 	gulp.task('default', function(){
-		updatePackage();
-		watchPackage();
+		updateVendor();
+		watchVendor();
 		livereloadProject();
 	});
