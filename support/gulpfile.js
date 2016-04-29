@@ -38,9 +38,24 @@
 // functions
 
 	// ------------------------------------------------------------------------------------------------
-	// package public folder
+	// watches
 
-		function updateVendor(source)
+		/**
+		 * Watches vendor assets
+		 */
+		function watchAssets()
+		{
+			gulp.watch(assets.js, function(){ updateAssets(assets.js) });
+			gulp.watch(assets.css, function(){ updateAssets(assets.css) });
+		}
+
+		/**
+		 * Copies vendor assets to project
+		 *
+		 * @param source
+		 * @returns {*}
+		 */
+		function updateAssets(source)
 		{
 			source = source || assets.core;
 			var target = project + 'public/vendor/sketchpad/';
@@ -52,17 +67,14 @@
 				.pipe(gulp.dest(target));
 		}
 
-		function watchVendor()
-		{
-			gulp.watch(assets.js, ['update-vendor-js']);
-			gulp.watch(assets.css, ['update-vendor-css']);
-		}
-
 
 	// ------------------------------------------------------------------------------------------------
-	// package views
+	// live reload
 
-		function livereloadVendor()
+		/**
+		 * Triggers a live reload when the vendor view files change
+		 */
+		function livereloadViews()
 		{
 			var source = vendor + 'resources/views/**/*';
 
@@ -70,10 +82,13 @@
 				.pipe(serverInstance);
 		}
 
-
-	// ------------------------------------------------------------------------------------------------
-	// project controllers
-
+		/**
+		 * Triggers a live reload when changes are detected in:
+		 *
+		 *  - vendor views (when edited)
+		 *  - project assets (after being copied)
+		 *  - project controllers (when edited)
+		 */
 		function livereloadProject()
 		{
 			var source =
@@ -89,18 +104,16 @@
 
 
 // ------------------------------------------------------------------------------------------------
-// sketchpad watching
+// tasks
 
-    gulp.task('update-vendor-js', function(){ updateVendor(assets.js) });
-    gulp.task('update-vendor-css', function(){ updateVendor(assets.css) });
-
-    gulp.task('watch-vendor', watchVendor);
-
-    gulp.task('lr-vendor', livereloadVendor);
+	// sub tasks
+    gulp.task('watch-assets', watchAssets);
+    gulp.task('lr-views', livereloadViews);
     gulp.task('lr-project', livereloadProject);
 
+	// main watch task
 	gulp.task('default', function(){
-		updateVendor();
-		watchVendor();
+		updateAssets();
+		watchAssets();
 		livereloadProject();
 	});
