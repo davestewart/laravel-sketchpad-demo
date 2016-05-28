@@ -2,9 +2,11 @@
 // libs
 
 	// gulp
-	var gulp 	= require('gulp'),
-		gutil 	= require('gulp-util'),
-		server 	= require('gulp-server-livereload');
+	var gulp 		= require('gulp'),
+		log 		= require('gulp-util').log,
+		livereload	= require('gulp-livereload'),
+		elixir		= require('laravel-elixir'),
+		elixirLr	= require('laravel-elixir-livereload');
 
 
 // ------------------------------------------------------------------------------------------------
@@ -20,100 +22,83 @@
 		js	  : vendor  + 'publish/assets/*.js'
 	};
 
-	var serverInstance = server({
-		livereload: {
-			enable: true,
-			filter: function (filename, cb) {
-				var state = ! /\.(sa|le)ss$|node_modules/.test(filename);
-				cb(state);
-			}
-		},
-		directoryListing: false,
-		open: false,
-		port:8001
-	});
-
 
 // ------------------------------------------------------------------------------------------------
 // functions
 
-	// ------------------------------------------------------------------------------------------------
-	// watches
+	/**
+	 * Watches vendor assets
+	 */
+	function watchAssets()
+	{
+		gulp.watch(assets.js, function(){ updateAssets(assets.js) });
+		gulp.watch(assets.css, function(){ updateAssets(assets.css) });
+	}
 
-		/**
-		 * Watches vendor assets
-		 */
-		function watchAssets()
-		{
-			gulp.watch(assets.js, function(){ updateAssets(assets.js) });
-			gulp.watch(assets.css, function(){ updateAssets(assets.css) });
-		}
+	/**
+	 * Copies vendor assets to project
+	 *
+	 * @param source
+	 * @returns {*}
+	 */
+	function updateAssets(source)
+	{
+		source = source || assets.core;
+		var target = project + 'public/vendor/sketchpad/';
 
-		/**
-		 * Copies vendor assets to project
-		 *
-		 * @param source
-		 * @returns {*}
-		 */
-		function updateAssets(source)
-		{
-			source = source || assets.core;
-			var target = project + 'public/vendor/sketchpad/';
-
-			//gutil.log(serverInstance);
-
-			return gulp
-				.src(source)
-				.pipe(gulp.dest(target));
-		}
+		return gulp
+			.src(source)
+			.pipe(gulp.dest(target));
+	}
 
 
-	// ------------------------------------------------------------------------------------------------
-	// live reload
+// ------------------------------------------------------------------------------------------------
+// sketchpad
 
-		/**
-		 * Triggers a live reload when the vendor view files change
-		 */
-		function livereloadViews()
-		{
-			var source = vendor + 'resources/views/**/*';
+	var sketchpad =
+	[
+		// sketchpad views
+		vendor  + 'resources/views/**/*',
 
-			gulp.src(source)
-				.pipe(serverInstance);
-		}
+		// sketchpad example controllers
+		vendor  + 'src/controllers/examples/**/*.php',
 
-		/**
-		 * Triggers a live reload when changes are detected in:
-		 *
-		 *  - vendor views (when edited)
-		 *  - project assets (after being copied)
-		 *  - project controllers (when edited)
-		 */
-		function livereloadProject()
-		{
-			var source =
-			[
-				vendor  + 'resources/views/**/*',
-				project + 'public/vendor/sketchpad/**/*.+(css|js)',
-				project + 'app/Http/Controllers/Sketchpad/**/*.php'
-			];
+		// sketchpad assets
+		project + 'public/vendor/sketchpad/**/*.+(css|js)',
 
-			gulp.src(source)
-				.pipe(serverInstance);
-		}
+		// user controllers
+		project + 'sketchpad/**/*.php',
+
+		// app files
+		project + 'app/**/*.php'
+	];
+
+	/**
+	 * Watch sketchpad files
+	 */
+	function livereloadAll()
+	{
+		livereload({start: true});
+		gulp.watch(sketchpad).on('change', livereload.changed);
+	}
+
+	function elixirLivereload()
+	{
+		elixir(function(mix) {
+			mix.livereload(sketchpad);
+		});
+	}
 
 
 // ------------------------------------------------------------------------------------------------
 // tasks
 
 	// sub tasks
-    gulp.task('watch-assets', watchAssets);
-    gulp.task('lr-views', livereloadViews);
-    gulp.task('lr-project', livereloadProject);
+	gulp.task('watch-assets', watchAssets);
 
 	// main watch task
 	gulp.task('default', function(){
 		updateAssets();
 		watchAssets();
-		livereloadProject();
+		livereloadAll();
 	});

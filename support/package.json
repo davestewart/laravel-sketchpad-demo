@@ -11,7 +11,10 @@
     "gulp": "^3.9.1",
     "gulp-server-livereload": "^1.7.4",
     "gulp-shell": "^0.5.2",
-    "gulp-util": "^3.0.7"
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5",
+    "laravel-elixir": "^4.2.1",
+    "laravel-elixir-livereload": "^1.1.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
