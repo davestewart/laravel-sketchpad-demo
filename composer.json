@@ -33,7 +33,7 @@
             "davestewart\\sketchpad\\": "vendor/davestewart/sketchpad/src/"
         },
         "files":[
-            "app/utils.php"
+
         ]
     },
     "autoload-dev": {
