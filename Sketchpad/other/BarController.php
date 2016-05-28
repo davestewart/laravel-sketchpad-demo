@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers\Sketchpad\other\cooie;
+<?php namespace sketchpad\other;
 
 use App\Http\Controllers\Controller;
 
@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
  *
  * @package App\Http\Controllers
  */
-class NameController extends Controller
+class BarController extends Controller
 {
 
 	/**
@@ -31,9 +31,9 @@ class NameController extends Controller
 		echo "Bar $thing";
 	}
 
-	public function Lorem()
+	public function lorem()
 	{
-		pr('Lorem', $this);
+		pr('lorem', $this);
 	}
 
 	public function ipsum()

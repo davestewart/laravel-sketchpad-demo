@@ -1,6 +1,8 @@
-<?php namespace App\Http\Controllers\Sketchpad\other;
+<?php namespace sketchpad;
 
 use App\Http\Controllers\Controller;
+use davestewart\sketchpad\services\Sketchpad;
+use Illuminate\Support\Facades\App;
 
 
 /**
@@ -8,17 +10,18 @@ use App\Http\Controllers\Controller;
  *
  * @package App\Http\Controllers
  */
-class BlahController extends Controller
+class FooController extends Controller
 {
 
+	
 	/**
 	 * Say hello
 	 *
 	 * @param string $thing
 	 */
-	public function foo($thing = 'world')
+	public function foo(App $app, $thing = 'yay', $bool = true, $id = 6)
 	{
-		echo "Foo $thing";
+		vd(func_get_args());
 	}
 
 	/**
@@ -31,9 +34,12 @@ class BlahController extends Controller
 		echo "Bar $thing";
 	}
 
-	public function adipiscing()
+	public function link(Sketchpad $sketchpad, $value = 1)
 	{
-		pr('adipiscing', $this);
+		pr('value is ' . $value);
+		$num    = rand(0, 100);
+		$url    = $sketchpad->route . $num;
+		echo "<a href='$url'>Link: $num</a>";
 	}
 
 	public function elit()
