@@ -1,20 +1,22 @@
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "type": "project",
-
     "minimum-stability": "dev",
-    "prefer-stable":true,
-
+    "prefer-stable": true,
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "barryvdh/laravel-ide-helper": "^2.1",
         "webmozart/glob": "^4.1",
         "phpdocumentor/reflection-docblock": "^2.0",
-        "davestewart/pathconfig": "^1.0@alpha"
+        "davestewart/pathconfig": "^1.0@alpha",
+        "symfony/filesystem": "^3.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
