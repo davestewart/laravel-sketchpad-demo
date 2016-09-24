@@ -14,7 +14,8 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
     "laravel-elixir": "^4.2.1",
-    "laravel-elixir-livereload": "^1.1.4"
+    "laravel-elixir-livereload": "^1.1.4",
+    "path": "^0.12.7"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

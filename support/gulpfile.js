@@ -6,6 +6,7 @@
 		log 		= require('gulp-util').log,
 		livereload	= require('gulp-livereload'),
 		elixir		= require('laravel-elixir'),
+		path		= require('path'),
 		elixirLr	= require('laravel-elixir-livereload');
 
 
@@ -57,19 +58,10 @@
 
 	var sketchpad =
 	[
-		// sketchpad views
 		vendor  + 'resources/views/**/*',
-
-		// sketchpad example controllers
-		vendor  + 'src/controllers/examples/**/*.php',
-
-		// sketchpad assets
+		vendor  + 'src/controllers/demo/**/*.php',
 		project + 'public/vendor/sketchpad/**/*.+(css|js)',
-
-		// user controllers
 		project + 'sketchpad/**/*.php',
-
-		// app files
 		project + 'app/**/*.php'
 	];
 
@@ -78,8 +70,22 @@
 	 */
 	function livereloadAll()
 	{
+		/*
+		var err = new Error();
+		var dirs	= err.stack.match(/\(.+?:/g);
+		console.log(dirs);
+		for(var name in err.stack)
+		{
+			//console.log(name, err.stack[name]);
+		}
+		*/
+
+		var root = path.normalize(__dirname + '/..');
 		livereload({start: true});
-		gulp.watch(sketchpad).on('change', livereload.changed);
+		gulp.watch(sketchpad).on('change', function(event){
+			event.file = event.path.replace(root, '');
+			livereload.changed(event.file)
+		});
 	}
 
 	function elixirLivereload()
