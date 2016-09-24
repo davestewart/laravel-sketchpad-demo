@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.2.29 on 2016-04-26.
+ * Generated for Laravel 5.2.29 on 2016-09-17.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13,13 +13,169 @@ namespace {
     class App extends \Illuminate\Support\Facades\App{
         
         /**
+         * Get the path to the configuration cache file.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getCachedConfigPath(){
+            return \pathconfig\apps\Laravel51::getCachedConfigPath();
+        }
+        
+        /**
+         * Get the path to the routes cache file.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getCachedRoutesPath(){
+            return \pathconfig\apps\Laravel51::getCachedRoutesPath();
+        }
+        
+        /**
+         * Get the path to the cached "compiled.php" file.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getCachedCompilePath(){
+            return \pathconfig\apps\Laravel51::getCachedCompilePath();
+        }
+        
+        /**
+         * Get the path to the cached services.json file.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getCachedServicesPath(){
+            return \pathconfig\apps\Laravel51::getCachedServicesPath();
+        }
+        
+        /**
+         * Set the base path for the application.
+         *
+         * @param string $basePath
+         * @return $this 
+         * @static 
+         */
+        public static function setBasePath($basePath){
+            //Method inherited from \pathconfig\apps\Laravel50            
+            return \pathconfig\apps\Laravel51::setBasePath($basePath);
+        }
+        
+        /**
+         * Set the database directory.
+         *
+         * @param string $path
+         * @return $this 
+         * @throws \Exception
+         * @static 
+         */
+        public static function useDatabasePath($path){
+            //Method inherited from \pathconfig\apps\Laravel50            
+            return \pathconfig\apps\Laravel51::useDatabasePath($path);
+        }
+        
+        /**
+         * Set the storage directory.
+         *
+         * @param string $path
+         * @return $this 
+         * @throws \Exception
+         * @static 
+         */
+        public static function useStoragePath($path){
+            //Method inherited from \pathconfig\apps\Laravel50            
+            return \pathconfig\apps\Laravel51::useStoragePath($path);
+        }
+        
+        /**
+         * Get the path to the application "app" directory.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function path(){
+            //Method inherited from \pathconfig\apps\Laravel50            
+            return \pathconfig\apps\Laravel51::path();
+        }
+        
+        /**
+         * Get the base path of the Laravel installation.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function basePath(){
+            //Method inherited from \pathconfig\apps\Laravel50            
+            return \pathconfig\apps\Laravel51::basePath();
+        }
+        
+        /**
+         * Get the path to the application configuration files.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function configPath(){
+            //Method inherited from \pathconfig\apps\Laravel50            
+            return \pathconfig\apps\Laravel51::configPath();
+        }
+        
+        /**
+         * Get the path to the database directory.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function databasePath(){
+            //Method inherited from \pathconfig\apps\Laravel50            
+            return \pathconfig\apps\Laravel51::databasePath();
+        }
+        
+        /**
+         * Get the path to the language files.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function langPath(){
+            //Method inherited from \pathconfig\apps\Laravel50            
+            return \pathconfig\apps\Laravel51::langPath();
+        }
+        
+        /**
+         * Get the path to the public / web directory.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function publicPath(){
+            //Method inherited from \pathconfig\apps\Laravel50            
+            return \pathconfig\apps\Laravel51::publicPath();
+        }
+        
+        /**
+         * Get the path to the storage directory.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function storagePath(){
+            //Method inherited from \pathconfig\apps\Laravel50            
+            return \pathconfig\apps\Laravel51::storagePath();
+        }
+        
+        /**
          * Get the version number of the application.
          *
          * @return string 
          * @static 
          */
         public static function version(){
-            return \Illuminate\Foundation\Application::version();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::version();
         }
         
         /**
@@ -30,7 +186,8 @@ namespace {
          * @static 
          */
         public static function bootstrapWith($bootstrappers){
-            \Illuminate\Foundation\Application::bootstrapWith($bootstrappers);
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::bootstrapWith($bootstrappers);
         }
         
         /**
@@ -41,7 +198,8 @@ namespace {
          * @static 
          */
         public static function afterLoadingEnvironment($callback){
-            \Illuminate\Foundation\Application::afterLoadingEnvironment($callback);
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::afterLoadingEnvironment($callback);
         }
         
         /**
@@ -53,7 +211,8 @@ namespace {
          * @static 
          */
         public static function beforeBootstrapping($bootstrapper, $callback){
-            \Illuminate\Foundation\Application::beforeBootstrapping($bootstrapper, $callback);
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::beforeBootstrapping($bootstrapper, $callback);
         }
         
         /**
@@ -65,7 +224,8 @@ namespace {
          * @static 
          */
         public static function afterBootstrapping($bootstrapper, $callback){
-            \Illuminate\Foundation\Application::afterBootstrapping($bootstrapper, $callback);
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::afterBootstrapping($bootstrapper, $callback);
         }
         
         /**
@@ -75,38 +235,8 @@ namespace {
          * @static 
          */
         public static function hasBeenBootstrapped(){
-            return \Illuminate\Foundation\Application::hasBeenBootstrapped();
-        }
-        
-        /**
-         * Set the base path for the application.
-         *
-         * @param string $basePath
-         * @return $this 
-         * @static 
-         */
-        public static function setBasePath($basePath){
-            return \Illuminate\Foundation\Application::setBasePath($basePath);
-        }
-        
-        /**
-         * Get the path to the application "app" directory.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function path(){
-            return \Illuminate\Foundation\Application::path();
-        }
-        
-        /**
-         * Get the base path of the Laravel installation.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function basePath(){
-            return \Illuminate\Foundation\Application::basePath();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::hasBeenBootstrapped();
         }
         
         /**
@@ -116,79 +246,8 @@ namespace {
          * @static 
          */
         public static function bootstrapPath(){
-            return \Illuminate\Foundation\Application::bootstrapPath();
-        }
-        
-        /**
-         * Get the path to the application configuration files.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function configPath(){
-            return \Illuminate\Foundation\Application::configPath();
-        }
-        
-        /**
-         * Get the path to the database directory.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function databasePath(){
-            return \Illuminate\Foundation\Application::databasePath();
-        }
-        
-        /**
-         * Set the database directory.
-         *
-         * @param string $path
-         * @return $this 
-         * @static 
-         */
-        public static function useDatabasePath($path){
-            return \Illuminate\Foundation\Application::useDatabasePath($path);
-        }
-        
-        /**
-         * Get the path to the language files.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function langPath(){
-            return \Illuminate\Foundation\Application::langPath();
-        }
-        
-        /**
-         * Get the path to the public / web directory.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function publicPath(){
-            return \Illuminate\Foundation\Application::publicPath();
-        }
-        
-        /**
-         * Get the path to the storage directory.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function storagePath(){
-            return \Illuminate\Foundation\Application::storagePath();
-        }
-        
-        /**
-         * Set the storage directory.
-         *
-         * @param string $path
-         * @return $this 
-         * @static 
-         */
-        public static function useStoragePath($path){
-            return \Illuminate\Foundation\Application::useStoragePath($path);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::bootstrapPath();
         }
         
         /**
@@ -198,7 +257,8 @@ namespace {
          * @static 
          */
         public static function environmentPath(){
-            return \Illuminate\Foundation\Application::environmentPath();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::environmentPath();
         }
         
         /**
@@ -209,7 +269,8 @@ namespace {
          * @static 
          */
         public static function useEnvironmentPath($path){
-            return \Illuminate\Foundation\Application::useEnvironmentPath($path);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::useEnvironmentPath($path);
         }
         
         /**
@@ -220,7 +281,8 @@ namespace {
          * @static 
          */
         public static function loadEnvironmentFrom($file){
-            return \Illuminate\Foundation\Application::loadEnvironmentFrom($file);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::loadEnvironmentFrom($file);
         }
         
         /**
@@ -230,7 +292,8 @@ namespace {
          * @static 
          */
         public static function environmentFile(){
-            return \Illuminate\Foundation\Application::environmentFile();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::environmentFile();
         }
         
         /**
@@ -240,7 +303,8 @@ namespace {
          * @static 
          */
         public static function environmentFilePath(){
-            return \Illuminate\Foundation\Application::environmentFilePath();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::environmentFilePath();
         }
         
         /**
@@ -251,7 +315,8 @@ namespace {
          * @static 
          */
         public static function environment(){
-            return \Illuminate\Foundation\Application::environment();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::environment();
         }
         
         /**
@@ -261,7 +326,8 @@ namespace {
          * @static 
          */
         public static function isLocal(){
-            return \Illuminate\Foundation\Application::isLocal();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::isLocal();
         }
         
         /**
@@ -272,7 +338,8 @@ namespace {
          * @static 
          */
         public static function detectEnvironment($callback){
-            return \Illuminate\Foundation\Application::detectEnvironment($callback);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::detectEnvironment($callback);
         }
         
         /**
@@ -282,7 +349,8 @@ namespace {
          * @static 
          */
         public static function runningInConsole(){
-            return \Illuminate\Foundation\Application::runningInConsole();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::runningInConsole();
         }
         
         /**
@@ -292,7 +360,8 @@ namespace {
          * @static 
          */
         public static function runningUnitTests(){
-            return \Illuminate\Foundation\Application::runningUnitTests();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::runningUnitTests();
         }
         
         /**
@@ -302,7 +371,8 @@ namespace {
          * @static 
          */
         public static function registerConfiguredProviders(){
-            \Illuminate\Foundation\Application::registerConfiguredProviders();
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::registerConfiguredProviders();
         }
         
         /**
@@ -315,7 +385,8 @@ namespace {
          * @static 
          */
         public static function register($provider, $options = array(), $force = false){
-            return \Illuminate\Foundation\Application::register($provider, $options, $force);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::register($provider, $options, $force);
         }
         
         /**
@@ -326,7 +397,8 @@ namespace {
          * @static 
          */
         public static function getProvider($provider){
-            return \Illuminate\Foundation\Application::getProvider($provider);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::getProvider($provider);
         }
         
         /**
@@ -337,7 +409,8 @@ namespace {
          * @static 
          */
         public static function resolveProviderClass($provider){
-            return \Illuminate\Foundation\Application::resolveProviderClass($provider);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::resolveProviderClass($provider);
         }
         
         /**
@@ -347,7 +420,8 @@ namespace {
          * @static 
          */
         public static function loadDeferredProviders(){
-            \Illuminate\Foundation\Application::loadDeferredProviders();
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::loadDeferredProviders();
         }
         
         /**
@@ -358,7 +432,8 @@ namespace {
          * @static 
          */
         public static function loadDeferredProvider($service){
-            \Illuminate\Foundation\Application::loadDeferredProvider($service);
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::loadDeferredProvider($service);
         }
         
         /**
@@ -370,7 +445,8 @@ namespace {
          * @static 
          */
         public static function registerDeferredProvider($provider, $service = null){
-            \Illuminate\Foundation\Application::registerDeferredProvider($provider, $service);
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::registerDeferredProvider($provider, $service);
         }
         
         /**
@@ -384,7 +460,8 @@ namespace {
          * @static 
          */
         public static function make($abstract, $parameters = array()){
-            return \Illuminate\Foundation\Application::make($abstract, $parameters);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::make($abstract, $parameters);
         }
         
         /**
@@ -397,7 +474,8 @@ namespace {
          * @static 
          */
         public static function bound($abstract){
-            return \Illuminate\Foundation\Application::bound($abstract);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::bound($abstract);
         }
         
         /**
@@ -407,7 +485,8 @@ namespace {
          * @static 
          */
         public static function isBooted(){
-            return \Illuminate\Foundation\Application::isBooted();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::isBooted();
         }
         
         /**
@@ -417,7 +496,8 @@ namespace {
          * @static 
          */
         public static function boot(){
-            \Illuminate\Foundation\Application::boot();
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::boot();
         }
         
         /**
@@ -428,7 +508,8 @@ namespace {
          * @static 
          */
         public static function booting($callback){
-            \Illuminate\Foundation\Application::booting($callback);
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::booting($callback);
         }
         
         /**
@@ -439,7 +520,8 @@ namespace {
          * @static 
          */
         public static function booted($callback){
-            \Illuminate\Foundation\Application::booted($callback);
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::booted($callback);
         }
         
         /**
@@ -448,7 +530,8 @@ namespace {
          * @static 
          */
         public static function handle($request, $type = 1, $catch = true){
-            return \Illuminate\Foundation\Application::handle($request, $type, $catch);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::handle($request, $type, $catch);
         }
         
         /**
@@ -458,7 +541,8 @@ namespace {
          * @static 
          */
         public static function shouldSkipMiddleware(){
-            return \Illuminate\Foundation\Application::shouldSkipMiddleware();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::shouldSkipMiddleware();
         }
         
         /**
@@ -468,17 +552,8 @@ namespace {
          * @static 
          */
         public static function configurationIsCached(){
-            return \Illuminate\Foundation\Application::configurationIsCached();
-        }
-        
-        /**
-         * Get the path to the configuration cache file.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function getCachedConfigPath(){
-            return \Illuminate\Foundation\Application::getCachedConfigPath();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::configurationIsCached();
         }
         
         /**
@@ -488,37 +563,8 @@ namespace {
          * @static 
          */
         public static function routesAreCached(){
-            return \Illuminate\Foundation\Application::routesAreCached();
-        }
-        
-        /**
-         * Get the path to the routes cache file.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function getCachedRoutesPath(){
-            return \Illuminate\Foundation\Application::getCachedRoutesPath();
-        }
-        
-        /**
-         * Get the path to the cached "compiled.php" file.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function getCachedCompilePath(){
-            return \Illuminate\Foundation\Application::getCachedCompilePath();
-        }
-        
-        /**
-         * Get the path to the cached services.php file.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function getCachedServicesPath(){
-            return \Illuminate\Foundation\Application::getCachedServicesPath();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::routesAreCached();
         }
         
         /**
@@ -528,7 +574,8 @@ namespace {
          * @static 
          */
         public static function isDownForMaintenance(){
-            return \Illuminate\Foundation\Application::isDownForMaintenance();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::isDownForMaintenance();
         }
         
         /**
@@ -542,7 +589,8 @@ namespace {
          * @static 
          */
         public static function abort($code, $message = '', $headers = array()){
-            \Illuminate\Foundation\Application::abort($code, $message, $headers);
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::abort($code, $message, $headers);
         }
         
         /**
@@ -553,7 +601,8 @@ namespace {
          * @static 
          */
         public static function terminating($callback){
-            return \Illuminate\Foundation\Application::terminating($callback);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::terminating($callback);
         }
         
         /**
@@ -563,7 +612,8 @@ namespace {
          * @static 
          */
         public static function terminate(){
-            \Illuminate\Foundation\Application::terminate();
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::terminate();
         }
         
         /**
@@ -573,7 +623,8 @@ namespace {
          * @static 
          */
         public static function getLoadedProviders(){
-            return \Illuminate\Foundation\Application::getLoadedProviders();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::getLoadedProviders();
         }
         
         /**
@@ -583,7 +634,8 @@ namespace {
          * @static 
          */
         public static function getDeferredServices(){
-            return \Illuminate\Foundation\Application::getDeferredServices();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::getDeferredServices();
         }
         
         /**
@@ -594,7 +646,8 @@ namespace {
          * @static 
          */
         public static function setDeferredServices($services){
-            \Illuminate\Foundation\Application::setDeferredServices($services);
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::setDeferredServices($services);
         }
         
         /**
@@ -605,7 +658,8 @@ namespace {
          * @static 
          */
         public static function addDeferredServices($services){
-            \Illuminate\Foundation\Application::addDeferredServices($services);
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::addDeferredServices($services);
         }
         
         /**
@@ -616,7 +670,8 @@ namespace {
          * @static 
          */
         public static function isDeferredService($service){
-            return \Illuminate\Foundation\Application::isDeferredService($service);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::isDeferredService($service);
         }
         
         /**
@@ -627,7 +682,8 @@ namespace {
          * @static 
          */
         public static function configureMonologUsing($callback){
-            return \Illuminate\Foundation\Application::configureMonologUsing($callback);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::configureMonologUsing($callback);
         }
         
         /**
@@ -637,7 +693,8 @@ namespace {
          * @static 
          */
         public static function hasMonologConfigurator(){
-            return \Illuminate\Foundation\Application::hasMonologConfigurator();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::hasMonologConfigurator();
         }
         
         /**
@@ -647,7 +704,8 @@ namespace {
          * @static 
          */
         public static function getMonologConfigurator(){
-            return \Illuminate\Foundation\Application::getMonologConfigurator();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::getMonologConfigurator();
         }
         
         /**
@@ -657,7 +715,8 @@ namespace {
          * @static 
          */
         public static function getLocale(){
-            return \Illuminate\Foundation\Application::getLocale();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::getLocale();
         }
         
         /**
@@ -668,7 +727,8 @@ namespace {
          * @static 
          */
         public static function setLocale($locale){
-            \Illuminate\Foundation\Application::setLocale($locale);
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::setLocale($locale);
         }
         
         /**
@@ -679,7 +739,8 @@ namespace {
          * @static 
          */
         public static function isLocale($locale){
-            return \Illuminate\Foundation\Application::isLocale($locale);
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::isLocale($locale);
         }
         
         /**
@@ -689,7 +750,8 @@ namespace {
          * @static 
          */
         public static function registerCoreContainerAliases(){
-            \Illuminate\Foundation\Application::registerCoreContainerAliases();
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::registerCoreContainerAliases();
         }
         
         /**
@@ -699,7 +761,8 @@ namespace {
          * @static 
          */
         public static function flush(){
-            \Illuminate\Foundation\Application::flush();
+            //Method inherited from \Illuminate\Foundation\Application            
+            \pathconfig\apps\Laravel51::flush();
         }
         
         /**
@@ -710,7 +773,8 @@ namespace {
          * @static 
          */
         public static function getNamespace(){
-            return \Illuminate\Foundation\Application::getNamespace();
+            //Method inherited from \Illuminate\Foundation\Application            
+            return \pathconfig\apps\Laravel51::getNamespace();
         }
         
         /**
@@ -722,7 +786,7 @@ namespace {
          */
         public static function when($concrete){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::when($concrete);
+            return \pathconfig\apps\Laravel51::when($concrete);
         }
         
         /**
@@ -734,7 +798,7 @@ namespace {
          */
         public static function resolved($abstract){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::resolved($abstract);
+            return \pathconfig\apps\Laravel51::resolved($abstract);
         }
         
         /**
@@ -746,7 +810,7 @@ namespace {
          */
         public static function isAlias($name){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::isAlias($name);
+            return \pathconfig\apps\Laravel51::isAlias($name);
         }
         
         /**
@@ -760,7 +824,7 @@ namespace {
          */
         public static function bind($abstract, $concrete = null, $shared = false){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::bind($abstract, $concrete, $shared);
+            \pathconfig\apps\Laravel51::bind($abstract, $concrete, $shared);
         }
         
         /**
@@ -774,7 +838,7 @@ namespace {
          */
         public static function addContextualBinding($concrete, $abstract, $implementation){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::addContextualBinding($concrete, $abstract, $implementation);
+            \pathconfig\apps\Laravel51::addContextualBinding($concrete, $abstract, $implementation);
         }
         
         /**
@@ -788,7 +852,7 @@ namespace {
          */
         public static function bindIf($abstract, $concrete = null, $shared = false){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::bindIf($abstract, $concrete, $shared);
+            \pathconfig\apps\Laravel51::bindIf($abstract, $concrete, $shared);
         }
         
         /**
@@ -801,7 +865,7 @@ namespace {
          */
         public static function singleton($abstract, $concrete = null){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::singleton($abstract, $concrete);
+            \pathconfig\apps\Laravel51::singleton($abstract, $concrete);
         }
         
         /**
@@ -813,7 +877,7 @@ namespace {
          */
         public static function share($closure){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::share($closure);
+            return \pathconfig\apps\Laravel51::share($closure);
         }
         
         /**
@@ -827,7 +891,7 @@ namespace {
          */
         public static function extend($abstract, $closure){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::extend($abstract, $closure);
+            \pathconfig\apps\Laravel51::extend($abstract, $closure);
         }
         
         /**
@@ -840,7 +904,7 @@ namespace {
          */
         public static function instance($abstract, $instance){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::instance($abstract, $instance);
+            \pathconfig\apps\Laravel51::instance($abstract, $instance);
         }
         
         /**
@@ -853,7 +917,7 @@ namespace {
          */
         public static function tag($abstracts, $tags){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::tag($abstracts, $tags);
+            \pathconfig\apps\Laravel51::tag($abstracts, $tags);
         }
         
         /**
@@ -865,7 +929,7 @@ namespace {
          */
         public static function tagged($tag){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::tagged($tag);
+            return \pathconfig\apps\Laravel51::tagged($tag);
         }
         
         /**
@@ -878,7 +942,7 @@ namespace {
          */
         public static function alias($abstract, $alias){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::alias($abstract, $alias);
+            \pathconfig\apps\Laravel51::alias($abstract, $alias);
         }
         
         /**
@@ -891,7 +955,7 @@ namespace {
          */
         public static function rebinding($abstract, $callback){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::rebinding($abstract, $callback);
+            return \pathconfig\apps\Laravel51::rebinding($abstract, $callback);
         }
         
         /**
@@ -905,7 +969,7 @@ namespace {
          */
         public static function refresh($abstract, $target, $method){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::refresh($abstract, $target, $method);
+            return \pathconfig\apps\Laravel51::refresh($abstract, $target, $method);
         }
         
         /**
@@ -918,7 +982,7 @@ namespace {
          */
         public static function wrap($callback, $parameters = array()){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::wrap($callback, $parameters);
+            return \pathconfig\apps\Laravel51::wrap($callback, $parameters);
         }
         
         /**
@@ -932,7 +996,7 @@ namespace {
          */
         public static function call($callback, $parameters = array(), $defaultMethod = null){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::call($callback, $parameters, $defaultMethod);
+            return \pathconfig\apps\Laravel51::call($callback, $parameters, $defaultMethod);
         }
         
         /**
@@ -946,7 +1010,7 @@ namespace {
          */
         public static function build($concrete, $parameters = array()){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::build($concrete, $parameters);
+            return \pathconfig\apps\Laravel51::build($concrete, $parameters);
         }
         
         /**
@@ -959,7 +1023,7 @@ namespace {
          */
         public static function resolving($abstract, $callback = null){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::resolving($abstract, $callback);
+            \pathconfig\apps\Laravel51::resolving($abstract, $callback);
         }
         
         /**
@@ -972,7 +1036,7 @@ namespace {
          */
         public static function afterResolving($abstract, $callback = null){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::afterResolving($abstract, $callback);
+            \pathconfig\apps\Laravel51::afterResolving($abstract, $callback);
         }
         
         /**
@@ -984,7 +1048,7 @@ namespace {
          */
         public static function isShared($abstract){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::isShared($abstract);
+            return \pathconfig\apps\Laravel51::isShared($abstract);
         }
         
         /**
@@ -995,7 +1059,7 @@ namespace {
          */
         public static function getBindings(){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::getBindings();
+            return \pathconfig\apps\Laravel51::getBindings();
         }
         
         /**
@@ -1007,7 +1071,7 @@ namespace {
          */
         public static function forgetInstance($abstract){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::forgetInstance($abstract);
+            \pathconfig\apps\Laravel51::forgetInstance($abstract);
         }
         
         /**
@@ -1018,7 +1082,7 @@ namespace {
          */
         public static function forgetInstances(){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::forgetInstances();
+            \pathconfig\apps\Laravel51::forgetInstances();
         }
         
         /**
@@ -1029,7 +1093,7 @@ namespace {
          */
         public static function getInstance(){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::getInstance();
+            return \pathconfig\apps\Laravel51::getInstance();
         }
         
         /**
@@ -1041,7 +1105,7 @@ namespace {
          */
         public static function setInstance($container){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::setInstance($container);
+            \pathconfig\apps\Laravel51::setInstance($container);
         }
         
         /**
@@ -1053,7 +1117,7 @@ namespace {
          */
         public static function offsetExists($key){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::offsetExists($key);
+            return \pathconfig\apps\Laravel51::offsetExists($key);
         }
         
         /**
@@ -1065,7 +1129,7 @@ namespace {
          */
         public static function offsetGet($key){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::offsetGet($key);
+            return \pathconfig\apps\Laravel51::offsetGet($key);
         }
         
         /**
@@ -1078,7 +1142,7 @@ namespace {
          */
         public static function offsetSet($key, $value){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::offsetSet($key, $value);
+            \pathconfig\apps\Laravel51::offsetSet($key, $value);
         }
         
         /**
@@ -1090,7 +1154,7 @@ namespace {
          */
         public static function offsetUnset($key){
             //Method inherited from \Illuminate\Container\Container            
-            \Illuminate\Foundation\Application::offsetUnset($key);
+            \pathconfig\apps\Laravel51::offsetUnset($key);
         }
         
     }
@@ -1991,16 +2055,6 @@ namespace {
         }
         
         /**
-         * Get a schema builder instance for the connection.
-         *
-         * @return \Illuminate\Database\Schema\MySqlBuilder 
-         * @static 
-         */
-        public static function getSchemaBuilder(){
-            return \Illuminate\Database\MySqlConnection::getSchemaBuilder();
-        }
-        
-        /**
          * Set the query grammar to the default implementation.
          *
          * @return void 
@@ -2008,7 +2062,7 @@ namespace {
          */
         public static function useDefaultQueryGrammar(){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::useDefaultQueryGrammar();
+            \Illuminate\Database\SQLiteConnection::useDefaultQueryGrammar();
         }
         
         /**
@@ -2019,7 +2073,7 @@ namespace {
          */
         public static function useDefaultSchemaGrammar(){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::useDefaultSchemaGrammar();
+            \Illuminate\Database\SQLiteConnection::useDefaultSchemaGrammar();
         }
         
         /**
@@ -2030,7 +2084,18 @@ namespace {
          */
         public static function useDefaultPostProcessor(){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::useDefaultPostProcessor();
+            \Illuminate\Database\SQLiteConnection::useDefaultPostProcessor();
+        }
+        
+        /**
+         * Get a schema builder instance for the connection.
+         *
+         * @return \Illuminate\Database\Schema\Builder 
+         * @static 
+         */
+        public static function getSchemaBuilder(){
+            //Method inherited from \Illuminate\Database\Connection            
+            return \Illuminate\Database\SQLiteConnection::getSchemaBuilder();
         }
         
         /**
@@ -2042,7 +2107,7 @@ namespace {
          */
         public static function table($table){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::table($table);
+            return \Illuminate\Database\SQLiteConnection::table($table);
         }
         
         /**
@@ -2053,7 +2118,7 @@ namespace {
          */
         public static function query(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::query();
+            return \Illuminate\Database\SQLiteConnection::query();
         }
         
         /**
@@ -2065,7 +2130,7 @@ namespace {
          */
         public static function raw($value){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::raw($value);
+            return \Illuminate\Database\SQLiteConnection::raw($value);
         }
         
         /**
@@ -2078,7 +2143,7 @@ namespace {
          */
         public static function selectOne($query, $bindings = array()){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::selectOne($query, $bindings);
+            return \Illuminate\Database\SQLiteConnection::selectOne($query, $bindings);
         }
         
         /**
@@ -2091,7 +2156,7 @@ namespace {
          */
         public static function selectFromWriteConnection($query, $bindings = array()){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::selectFromWriteConnection($query, $bindings);
+            return \Illuminate\Database\SQLiteConnection::selectFromWriteConnection($query, $bindings);
         }
         
         /**
@@ -2105,7 +2170,7 @@ namespace {
          */
         public static function select($query, $bindings = array(), $useReadPdo = true){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::select($query, $bindings, $useReadPdo);
+            return \Illuminate\Database\SQLiteConnection::select($query, $bindings, $useReadPdo);
         }
         
         /**
@@ -2118,7 +2183,7 @@ namespace {
          */
         public static function insert($query, $bindings = array()){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::insert($query, $bindings);
+            return \Illuminate\Database\SQLiteConnection::insert($query, $bindings);
         }
         
         /**
@@ -2131,7 +2196,7 @@ namespace {
          */
         public static function update($query, $bindings = array()){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::update($query, $bindings);
+            return \Illuminate\Database\SQLiteConnection::update($query, $bindings);
         }
         
         /**
@@ -2144,7 +2209,7 @@ namespace {
          */
         public static function delete($query, $bindings = array()){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::delete($query, $bindings);
+            return \Illuminate\Database\SQLiteConnection::delete($query, $bindings);
         }
         
         /**
@@ -2157,7 +2222,7 @@ namespace {
          */
         public static function statement($query, $bindings = array()){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::statement($query, $bindings);
+            return \Illuminate\Database\SQLiteConnection::statement($query, $bindings);
         }
         
         /**
@@ -2170,7 +2235,7 @@ namespace {
          */
         public static function affectingStatement($query, $bindings = array()){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::affectingStatement($query, $bindings);
+            return \Illuminate\Database\SQLiteConnection::affectingStatement($query, $bindings);
         }
         
         /**
@@ -2182,7 +2247,7 @@ namespace {
          */
         public static function unprepared($query){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::unprepared($query);
+            return \Illuminate\Database\SQLiteConnection::unprepared($query);
         }
         
         /**
@@ -2194,7 +2259,7 @@ namespace {
          */
         public static function prepareBindings($bindings){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::prepareBindings($bindings);
+            return \Illuminate\Database\SQLiteConnection::prepareBindings($bindings);
         }
         
         /**
@@ -2207,7 +2272,7 @@ namespace {
          */
         public static function transaction($callback){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::transaction($callback);
+            return \Illuminate\Database\SQLiteConnection::transaction($callback);
         }
         
         /**
@@ -2218,7 +2283,7 @@ namespace {
          */
         public static function beginTransaction(){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::beginTransaction();
+            \Illuminate\Database\SQLiteConnection::beginTransaction();
         }
         
         /**
@@ -2229,7 +2294,7 @@ namespace {
          */
         public static function commit(){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::commit();
+            \Illuminate\Database\SQLiteConnection::commit();
         }
         
         /**
@@ -2240,7 +2305,7 @@ namespace {
          */
         public static function rollBack(){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::rollBack();
+            \Illuminate\Database\SQLiteConnection::rollBack();
         }
         
         /**
@@ -2251,7 +2316,7 @@ namespace {
          */
         public static function transactionLevel(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::transactionLevel();
+            return \Illuminate\Database\SQLiteConnection::transactionLevel();
         }
         
         /**
@@ -2263,7 +2328,7 @@ namespace {
          */
         public static function pretend($callback){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::pretend($callback);
+            return \Illuminate\Database\SQLiteConnection::pretend($callback);
         }
         
         /**
@@ -2277,7 +2342,7 @@ namespace {
          */
         public static function logQuery($query, $bindings, $time = null){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::logQuery($query, $bindings, $time);
+            \Illuminate\Database\SQLiteConnection::logQuery($query, $bindings, $time);
         }
         
         /**
@@ -2289,7 +2354,7 @@ namespace {
          */
         public static function listen($callback){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::listen($callback);
+            \Illuminate\Database\SQLiteConnection::listen($callback);
         }
         
         /**
@@ -2300,7 +2365,7 @@ namespace {
          */
         public static function isDoctrineAvailable(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::isDoctrineAvailable();
+            return \Illuminate\Database\SQLiteConnection::isDoctrineAvailable();
         }
         
         /**
@@ -2313,7 +2378,7 @@ namespace {
          */
         public static function getDoctrineColumn($table, $column){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getDoctrineColumn($table, $column);
+            return \Illuminate\Database\SQLiteConnection::getDoctrineColumn($table, $column);
         }
         
         /**
@@ -2324,7 +2389,7 @@ namespace {
          */
         public static function getDoctrineSchemaManager(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getDoctrineSchemaManager();
+            return \Illuminate\Database\SQLiteConnection::getDoctrineSchemaManager();
         }
         
         /**
@@ -2335,7 +2400,7 @@ namespace {
          */
         public static function getDoctrineConnection(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getDoctrineConnection();
+            return \Illuminate\Database\SQLiteConnection::getDoctrineConnection();
         }
         
         /**
@@ -2346,7 +2411,7 @@ namespace {
          */
         public static function getPdo(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getPdo();
+            return \Illuminate\Database\SQLiteConnection::getPdo();
         }
         
         /**
@@ -2357,7 +2422,7 @@ namespace {
          */
         public static function getReadPdo(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getReadPdo();
+            return \Illuminate\Database\SQLiteConnection::getReadPdo();
         }
         
         /**
@@ -2370,7 +2435,7 @@ namespace {
          */
         public static function setPdo($pdo){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::setPdo($pdo);
+            return \Illuminate\Database\SQLiteConnection::setPdo($pdo);
         }
         
         /**
@@ -2382,7 +2447,7 @@ namespace {
          */
         public static function setReadPdo($pdo){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::setReadPdo($pdo);
+            return \Illuminate\Database\SQLiteConnection::setReadPdo($pdo);
         }
         
         /**
@@ -2394,7 +2459,7 @@ namespace {
          */
         public static function setReconnector($reconnector){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::setReconnector($reconnector);
+            return \Illuminate\Database\SQLiteConnection::setReconnector($reconnector);
         }
         
         /**
@@ -2405,7 +2470,7 @@ namespace {
          */
         public static function getName(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getName();
+            return \Illuminate\Database\SQLiteConnection::getName();
         }
         
         /**
@@ -2417,7 +2482,7 @@ namespace {
          */
         public static function getConfig($option){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getConfig($option);
+            return \Illuminate\Database\SQLiteConnection::getConfig($option);
         }
         
         /**
@@ -2428,7 +2493,7 @@ namespace {
          */
         public static function getDriverName(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getDriverName();
+            return \Illuminate\Database\SQLiteConnection::getDriverName();
         }
         
         /**
@@ -2439,7 +2504,7 @@ namespace {
          */
         public static function getQueryGrammar(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getQueryGrammar();
+            return \Illuminate\Database\SQLiteConnection::getQueryGrammar();
         }
         
         /**
@@ -2451,7 +2516,7 @@ namespace {
          */
         public static function setQueryGrammar($grammar){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::setQueryGrammar($grammar);
+            \Illuminate\Database\SQLiteConnection::setQueryGrammar($grammar);
         }
         
         /**
@@ -2462,7 +2527,7 @@ namespace {
          */
         public static function getSchemaGrammar(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getSchemaGrammar();
+            return \Illuminate\Database\SQLiteConnection::getSchemaGrammar();
         }
         
         /**
@@ -2474,7 +2539,7 @@ namespace {
          */
         public static function setSchemaGrammar($grammar){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::setSchemaGrammar($grammar);
+            \Illuminate\Database\SQLiteConnection::setSchemaGrammar($grammar);
         }
         
         /**
@@ -2485,7 +2550,7 @@ namespace {
          */
         public static function getPostProcessor(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getPostProcessor();
+            return \Illuminate\Database\SQLiteConnection::getPostProcessor();
         }
         
         /**
@@ -2497,7 +2562,7 @@ namespace {
          */
         public static function setPostProcessor($processor){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::setPostProcessor($processor);
+            \Illuminate\Database\SQLiteConnection::setPostProcessor($processor);
         }
         
         /**
@@ -2508,7 +2573,7 @@ namespace {
          */
         public static function getEventDispatcher(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getEventDispatcher();
+            return \Illuminate\Database\SQLiteConnection::getEventDispatcher();
         }
         
         /**
@@ -2520,7 +2585,7 @@ namespace {
          */
         public static function setEventDispatcher($events){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::setEventDispatcher($events);
+            \Illuminate\Database\SQLiteConnection::setEventDispatcher($events);
         }
         
         /**
@@ -2531,7 +2596,7 @@ namespace {
          */
         public static function pretending(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::pretending();
+            return \Illuminate\Database\SQLiteConnection::pretending();
         }
         
         /**
@@ -2542,7 +2607,7 @@ namespace {
          */
         public static function getFetchMode(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getFetchMode();
+            return \Illuminate\Database\SQLiteConnection::getFetchMode();
         }
         
         /**
@@ -2553,7 +2618,7 @@ namespace {
          */
         public static function getFetchArgument(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getFetchArgument();
+            return \Illuminate\Database\SQLiteConnection::getFetchArgument();
         }
         
         /**
@@ -2564,7 +2629,7 @@ namespace {
          */
         public static function getFetchConstructorArgument(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getFetchConstructorArgument();
+            return \Illuminate\Database\SQLiteConnection::getFetchConstructorArgument();
         }
         
         /**
@@ -2578,7 +2643,7 @@ namespace {
          */
         public static function setFetchMode($fetchMode, $fetchArgument = null, $fetchConstructorArgument = array()){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::setFetchMode($fetchMode, $fetchArgument, $fetchConstructorArgument);
+            return \Illuminate\Database\SQLiteConnection::setFetchMode($fetchMode, $fetchArgument, $fetchConstructorArgument);
         }
         
         /**
@@ -2589,7 +2654,7 @@ namespace {
          */
         public static function getQueryLog(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getQueryLog();
+            return \Illuminate\Database\SQLiteConnection::getQueryLog();
         }
         
         /**
@@ -2600,7 +2665,7 @@ namespace {
          */
         public static function flushQueryLog(){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::flushQueryLog();
+            \Illuminate\Database\SQLiteConnection::flushQueryLog();
         }
         
         /**
@@ -2611,7 +2676,7 @@ namespace {
          */
         public static function enableQueryLog(){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::enableQueryLog();
+            \Illuminate\Database\SQLiteConnection::enableQueryLog();
         }
         
         /**
@@ -2622,7 +2687,7 @@ namespace {
          */
         public static function disableQueryLog(){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::disableQueryLog();
+            \Illuminate\Database\SQLiteConnection::disableQueryLog();
         }
         
         /**
@@ -2633,7 +2698,7 @@ namespace {
          */
         public static function logging(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::logging();
+            return \Illuminate\Database\SQLiteConnection::logging();
         }
         
         /**
@@ -2644,7 +2709,7 @@ namespace {
          */
         public static function getDatabaseName(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getDatabaseName();
+            return \Illuminate\Database\SQLiteConnection::getDatabaseName();
         }
         
         /**
@@ -2656,7 +2721,7 @@ namespace {
          */
         public static function setDatabaseName($database){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::setDatabaseName($database);
+            return \Illuminate\Database\SQLiteConnection::setDatabaseName($database);
         }
         
         /**
@@ -2667,7 +2732,7 @@ namespace {
          */
         public static function getTablePrefix(){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::getTablePrefix();
+            return \Illuminate\Database\SQLiteConnection::getTablePrefix();
         }
         
         /**
@@ -2679,7 +2744,7 @@ namespace {
          */
         public static function setTablePrefix($prefix){
             //Method inherited from \Illuminate\Database\Connection            
-            \Illuminate\Database\MySqlConnection::setTablePrefix($prefix);
+            \Illuminate\Database\SQLiteConnection::setTablePrefix($prefix);
         }
         
         /**
@@ -2691,7 +2756,7 @@ namespace {
          */
         public static function withTablePrefix($grammar){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::withTablePrefix($grammar);
+            return \Illuminate\Database\SQLiteConnection::withTablePrefix($grammar);
         }
         
     }
@@ -8319,18 +8384,7 @@ namespace {
          * @static 
          */
         public static function hasTable($table){
-            return \Illuminate\Database\Schema\MySqlBuilder::hasTable($table);
-        }
-        
-        /**
-         * Get the column listing for a given table.
-         *
-         * @param string $table
-         * @return array 
-         * @static 
-         */
-        public static function getColumnListing($table){
-            return \Illuminate\Database\Schema\MySqlBuilder::getColumnListing($table);
+            return \Illuminate\Database\Schema\Builder::hasTable($table);
         }
         
         /**
@@ -8342,8 +8396,7 @@ namespace {
          * @static 
          */
         public static function hasColumn($table, $column){
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::hasColumn($table, $column);
+            return \Illuminate\Database\Schema\Builder::hasColumn($table, $column);
         }
         
         /**
@@ -8355,8 +8408,7 @@ namespace {
          * @static 
          */
         public static function hasColumns($table, $columns){
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::hasColumns($table, $columns);
+            return \Illuminate\Database\Schema\Builder::hasColumns($table, $columns);
         }
         
         /**
@@ -8368,8 +8420,18 @@ namespace {
          * @static 
          */
         public static function getColumnType($table, $column){
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::getColumnType($table, $column);
+            return \Illuminate\Database\Schema\Builder::getColumnType($table, $column);
+        }
+        
+        /**
+         * Get the column listing for a given table.
+         *
+         * @param string $table
+         * @return array 
+         * @static 
+         */
+        public static function getColumnListing($table){
+            return \Illuminate\Database\Schema\Builder::getColumnListing($table);
         }
         
         /**
@@ -8381,8 +8443,7 @@ namespace {
          * @static 
          */
         public static function table($table, $callback){
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::table($table, $callback);
+            return \Illuminate\Database\Schema\Builder::table($table, $callback);
         }
         
         /**
@@ -8394,8 +8455,7 @@ namespace {
          * @static 
          */
         public static function create($table, $callback){
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::create($table, $callback);
+            return \Illuminate\Database\Schema\Builder::create($table, $callback);
         }
         
         /**
@@ -8406,8 +8466,7 @@ namespace {
          * @static 
          */
         public static function drop($table){
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::drop($table);
+            return \Illuminate\Database\Schema\Builder::drop($table);
         }
         
         /**
@@ -8418,8 +8477,7 @@ namespace {
          * @static 
          */
         public static function dropIfExists($table){
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::dropIfExists($table);
+            return \Illuminate\Database\Schema\Builder::dropIfExists($table);
         }
         
         /**
@@ -8431,8 +8489,7 @@ namespace {
          * @static 
          */
         public static function rename($from, $to){
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::rename($from, $to);
+            return \Illuminate\Database\Schema\Builder::rename($from, $to);
         }
         
         /**
@@ -8442,8 +8499,7 @@ namespace {
          * @static 
          */
         public static function getConnection(){
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::getConnection();
+            return \Illuminate\Database\Schema\Builder::getConnection();
         }
         
         /**
@@ -8454,8 +8510,7 @@ namespace {
          * @static 
          */
         public static function setConnection($connection){
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            return \Illuminate\Database\Schema\MySqlBuilder::setConnection($connection);
+            return \Illuminate\Database\Schema\Builder::setConnection($connection);
         }
         
         /**
@@ -8466,8 +8521,7 @@ namespace {
          * @static 
          */
         public static function blueprintResolver($resolver){
-            //Method inherited from \Illuminate\Database\Schema\Builder            
-            \Illuminate\Database\Schema\MySqlBuilder::blueprintResolver($resolver);
+            \Illuminate\Database\Schema\Builder::blueprintResolver($resolver);
         }
         
     }
